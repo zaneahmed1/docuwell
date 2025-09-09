@@ -1,0 +1,21 @@
+import { Link, NavLink } from "react-router-dom";
+
+export default function NavBar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+        <Link className="navbar-brand" to="/">DocuWell</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dwNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div id="dwNav" className="collapse navbar-collapse">
+          <ul className="navbar-nav me-auto">
+            <li className="nav-item"><NavLink className="nav-link" to="/symptoms">Log Symptoms</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/medications">Medications</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/reports">Reports</NavLink></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
