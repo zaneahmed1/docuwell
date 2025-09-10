@@ -1,4 +1,6 @@
 import useLocalStorage from "../hooks/useLocalStorage";
+import { ClipboardData, CapsulePill, CalendarWeek } from "react-bootstrap-icons";
+
 
 export default function Home() {
   const [logs] = useLocalStorage("dw_symptoms", []);
@@ -23,35 +25,37 @@ export default function Home() {
       <h2 className="mb-4">Welcome to DocuWell</h2>
       <p className="lead">A chronic illness tracking app</p>
       <div className="row g-3">
-        {/* Average Severity */}
-        <div className="col-md-4">
+    {/* Avg Severity */}
+    <div className="col-md-4">
           <div className={`card shadow border-0 ${severityBg()}`}>
             <div className="card-body text-center">
+              <ClipboardData className="fs-1 mb-2" />
               <h5 className="card-title">Avg Severity (7d)</h5>
               <p className="display-6 fw-bold">{avg}</p>
             </div>
           </div>
         </div>
+      {/* Entries This Week */}
+<div className="col-md-4">
+  <div className="card shadow border-0">
+    <div className="card-body text-center">
+      <CalendarWeek className="text-primary fs-1 mb-2" />
+      <h5 className="card-title">Entries This Week</h5>
+      <p className="display-6 fw-bold text-primary">{last7.length}</p>
+    </div>
+  </div>
+</div>
 
-        {/* Entries This Week */}
-        <div className="col-md-4">
-          <div className="card shadow border-0">
-            <div className="card-body text-center">
-              <h5 className="card-title">Entries This Week</h5>
-              <p className="display-6 fw-bold">{last7.length}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Active Medications */}
-        <div className="col-md-4">
-          <div className="card shadow border-0">
-            <div className="card-body text-center">
-              <h5 className="card-title">Active Medications</h5>
-              <p className="display-6 fw-bold">{meds.length}</p>
-            </div>
-          </div>
-        </div>
+      {/* Active Medications */}
+<div className="col-md-4">
+  <div className="card shadow border-0">
+    <div className="card-body text-center">
+      <CapsulePill className="text-success fs-1 mb-2" />
+      <h5 className="card-title">Active Medications</h5>
+      <p className="display-6 fw-bold text-success">{meds.length}</p>
+    </div>
+  </div>
+</div>
       </div>
     </>
   );
