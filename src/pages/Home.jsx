@@ -8,7 +8,9 @@ export default function Home() {
 
   return (
     <>
-      <h2 className="mb-4">Dashboard</h2>
+      <h2 className="mb-4">Welcome to DocuWell</h2>
+      <p className="lead">A chronic illness tracking app</p>
+      <br></br>
       <div className="row g-3">
         <div className="col-md-4">
           <div className="card"><div className="card-body">
