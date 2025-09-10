@@ -1,13 +1,23 @@
 import { useState } from "react";
 
 export default function SymptomForm({ onAdd }) {
-  const [form, setForm] = useState({ date: "", type: "", severity: 5, notes: "" });
+  const [form, setForm] = useState({
+    date: "",
+    type: "",
+    severity: 5,
+    notes: "",
+  });
 
-  const change = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const change = (e) =>
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const submit = (e) => {
     e.preventDefault();
-    onAdd({ id: crypto.randomUUID(), ...form, severity: Number(form.severity) });
+    onAdd({
+      id: crypto.randomUUID(),
+      ...form,
+      severity: Number(form.severity),
+    });
     setForm({ date: "", type: "", severity: 5, notes: "" });
   };
 
@@ -47,10 +57,20 @@ export default function SymptomForm({ onAdd }) {
                 <option value="">Select…</option>
                 <option>Pain</option>
                 <option>Fatigue</option>
-                <option>Sleep</option>
-                <option>Mood</option>
+                <option>Sleep Issues</option>
+                <option>Mood Changes</option>
                 <option>Headache</option>
-                <option>GI</option>
+                <option>Gastrointestinal (GI)</option>
+                <option>Dizziness</option>
+                <option>Nausea</option>
+                <option>Shortness of Breath</option>
+                <option>Joint Stiffness</option>
+                <option>Brain Fog</option>
+                <option>Anxiety</option>
+                <option>Depression</option>
+                <option>Skin Issues</option>
+                <option>Allergy/Reaction</option>
+                <option>Other</option>
               </select>
             </div>
             <div className="col-md-4">
