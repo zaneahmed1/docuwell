@@ -8,7 +8,7 @@ export default function Symptoms() {
   const del = id => setLogs(logs.filter(x => x.id !== id));
   return (
     <>
-      <h2 className="mb-3">Log Symptoms</h2>
+      <h2 className="mb-3">Symptoms Log</h2>
       <SymptomForm onAdd={add} />
       <div>{logs.length === 0 ? <p className="text-muted">No entries yet.</p> :
         logs.map(item => <SymptomCard key={item.id} item={item} onDelete={del} />)}

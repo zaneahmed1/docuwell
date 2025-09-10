@@ -10,7 +10,7 @@ export default function NavBar() {
         </button>
         <div id="dwNav" className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto">
-            <li className="nav-item"><NavLink className="nav-link" to="/symptoms">Log Symptoms</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/symptoms">Symptoms Log</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/medications">Medications</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/reports">Reports</NavLink></li>
           </ul>
