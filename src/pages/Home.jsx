@@ -60,3 +60,5 @@ export default function Home() {
     </>
   );
 }
+
+//make each card on home page a link to the respective page
