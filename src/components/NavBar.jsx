@@ -8,13 +8,16 @@ export default function NavBar() {
         <Link className="navbar-brand" to="/">DocuWell</Link>
 
         <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#dwNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+  className="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#dwNav"
+  aria-controls="dwNav"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span className="navbar-toggler-icon"></span>
+</button>
 
         <div id="dwNav" className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto">
