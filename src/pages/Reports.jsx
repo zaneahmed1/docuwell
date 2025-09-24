@@ -19,7 +19,15 @@ export default function Reports() {
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
+                    <XAxis 
+  dataKey="date"
+  tickFormatter={(d) =>
+    new Date(d).toLocaleDateString("en-US", { month: "short", day: "numeric" })
+  }
+  angle={-20}
+  textAnchor="end"
+  interval="preserveStartEnd"
+/>
                     <YAxis domain={[0, 10]} />
                     <Tooltip />
                     <Line type="monotone" dataKey="severity" />
